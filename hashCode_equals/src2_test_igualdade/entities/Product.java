@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Objects;
 
-public class Product {
+public class Product implements Comparable<Product>{// usando a comparação como o metodo, Comparable, sendo implements
 	
 	private String name;
 	private Double price;
@@ -44,6 +44,16 @@ public class Product {
 			return false;
 		Product other = (Product) obj;
 		return Objects.equals(name, other.name) && Objects.equals(price, other.price);
+	}
+
+	@Override
+	public String toString() {
+		return "Product: " + name + ", Price: " + price + "$";
+	}
+
+	@Override
+	public int compareTo(Product other) {
+		return name.toUpperCase().compareTo(other.getName().toUpperCase());
 	}
 	
 	
