@@ -27,6 +27,6 @@ public class Product {
 	}
 	@Override
 	public String toString() {
-		return "Produc: [" + name + String.format("%.2f price:", price) + "]";
+		return "Produc " + name + String.format(" price %.2f", price) + "$";
 	}
 }
