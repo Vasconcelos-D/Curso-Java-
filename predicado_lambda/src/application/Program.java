@@ -20,10 +20,8 @@ public class Program {
 		list.add(new Product("HD Case", 83.90));
 		
 		double min = 100.0;
-		//Var paramentizada
-		
-		Predicate<Product> pred = p -> p.getPrice() >= min;
-		list.removeIf(pred);
+
+		list.removeIf(p -> p.getPrice() >= min);
 		
 		for (Product p : list) {
 			System.out.println(p);
