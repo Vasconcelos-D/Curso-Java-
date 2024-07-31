@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 import entities.Product;
 import util.ProductPredicate;
@@ -18,8 +19,12 @@ public class Program {
 		list.add(new Product("Tablet", 350.00));
 		list.add(new Product("HD Case", 83.90));
 		
-		list.removeIf(Product::nonStaticProductPredicate);
-		//referência para méthodo estático
+		double min = 100.0;
+		//Var paramentizada
+		
+		Predicate<Product> pred = p -> p.getPrice() >= min;
+		list.removeIf(pred);
+		
 		for (Product p : list) {
 			System.out.println(p);
 		}
